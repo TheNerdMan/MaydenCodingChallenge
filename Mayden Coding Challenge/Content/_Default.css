@@ -1,0 +1,34 @@
+﻿
+/* Individual item */
+.shoppingListItem {
+    background-color: gray;
+    border: 1px solid black;
+    margin: 5px;
+    border-radius: 5px;
+    color: white;
+}
+    .shoppingListItem .title {
+        color: white;
+    }
+
+    .shoppingListItem .quantity {
+        color: white;
+    }
+
+    .shoppingListItem .cost {
+        color: white;
+    }
+    .shoppingListItem .server {
+        color: white;
+    }
+
+/* buttons */
+.addButton {
+    position: relative;
+    top: 40px;
+    left: 150px;
+}
+.removeButton {
+    position: relative;
+    top: 40px;
+}

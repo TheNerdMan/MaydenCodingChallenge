@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mayden_Coding_Challenge.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,14 @@ namespace Mayden_Coding_Challenge
     public partial class _Default : Page
     {
         protected void Page_Load(object sender, EventArgs e)
+        {
+            // get list and pass to user control
+            List.shoppingList = new List<ShoppingListItem>() {
+                
+            };
+        }
+
+        protected void addButton_Click(object sender, EventArgs e)
         {
 
         }

@@ -146,3 +146,5 @@ C:\Users\Alex\source\repos\TheNerdMan\MaydenCodingChallenge\Mayden Coding Challe
 C:\Users\Alex\source\repos\TheNerdMan\MaydenCodingChallenge\Mayden Coding Challenge\obj\Debug\Mayden Coding Challenge.csproj.CopyComplete
 C:\Users\Alex\source\repos\TheNerdMan\MaydenCodingChallenge\Mayden Coding Challenge\obj\Debug\Mayden Coding Challenge.dll
 C:\Users\Alex\source\repos\TheNerdMan\MaydenCodingChallenge\Mayden Coding Challenge\obj\Debug\Mayden Coding Challenge.pdb
+C:\Users\Alex\source\repos\TheNerdMan\MaydenCodingChallenge\Mayden Coding Challenge\bin\RestSharp.dll
+C:\Users\Alex\source\repos\TheNerdMan\MaydenCodingChallenge\Mayden Coding Challenge\bin\RestSharp.xml
