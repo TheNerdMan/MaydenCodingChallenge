@@ -69,6 +69,27 @@ namespace Mayden_Coding_Challenge.Services
         /// <summary>
         /// Removes an item from the list
         /// </summary>
+        /// <param name="item">Full item</param>
+        /// <returns>updated list</returns>
+        public List<ShoppingListItem> removeItem(ShoppingListItem item)
+        {
+            var shoppingList = getShoppingList();
+            try
+            {
+                shoppingList.Remove(shoppingList.Where(c => c.id == item.id).Select(c => c).FirstOrDefault());
+                putShoppingList(shoppingList);
+            }
+            catch (Exception ex)
+            {
+                // TODO: Handel error
+            }
+
+            return shoppingList;
+        }
+
+        /// <summary>
+        /// Removes an item from the list
+        /// </summary>
         /// <param name="index">items index</param>
         /// <returns>updated list</returns>
         public List<ShoppingListItem> removeItem(int index)

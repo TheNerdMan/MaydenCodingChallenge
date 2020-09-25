@@ -12,6 +12,13 @@
                 <asp:Button runat="server" ID="addButton" Text="+" CssClass="addButton" OnClick="addButton_Click" />
             </div>
         </div>
+        <div class="row header">
+            <h3 class="title col-md-5">Name</h3>
+            <h3 class="quantity col-md-2">Quantity</h3>
+            <h3 class="cost col-md-1">Price</h3>
+            <h3 class="col-md-2">Image</h3>
+            <h3 class="col-md-2">Actions</h3>
+        </div>
         <div class="row">
             <asp:PlaceHolder runat="server" ID="newRecordPlaceholder"></asp:PlaceHolder>
         </div>

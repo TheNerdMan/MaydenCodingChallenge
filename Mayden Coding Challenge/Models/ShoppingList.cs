@@ -7,6 +7,7 @@ namespace Mayden_Coding_Challenge.Models
 {
     public class ShoppingListItem
     {
+        public Guid id { get; set; }
         public string name { get; set; }
         public int quantity { get; set; }
         public float pricePerUnit { get; set; }
@@ -16,6 +17,7 @@ namespace Mayden_Coding_Challenge.Models
 
         public ShoppingListItem(string name, int quantity, float pricePerUnit, int order)
         {
+            id = Guid.NewGuid();
             this.name = name;
             this.quantity = quantity;
             this.pricePerUnit = pricePerUnit;

@@ -26,5 +26,6 @@ namespace Mayden_Coding_Challenge.Controls
             ucItem.item = (ShoppingListItem)e.Item.DataItem;
             ucItem.DataBind();
         }
+
     }
 }

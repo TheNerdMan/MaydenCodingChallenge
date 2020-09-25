@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Mayden_Coding_Challenge.Models;
+using Mayden_Coding_Challenge.Services;
 
 namespace Mayden_Coding_Challenge.Controls
 {
@@ -23,7 +24,10 @@ namespace Mayden_Coding_Challenge.Controls
 
         protected void removeButton_Click(object sender, EventArgs e)
         {
-
+            var srv = new ShoppingListController();
+            srv.removeItem(item);
+            Response.Redirect(Request.RawUrl);
         }
+
     }
 }

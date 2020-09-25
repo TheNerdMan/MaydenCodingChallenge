@@ -27,7 +27,7 @@ namespace Mayden_Coding_Challenge.Controls
             item.pricePerUnit = int.TryParse(newItemQuantity.Text, out var u) ? u : 0;
             item.imageUrl = newItemImageLink.Text ?? "";
 
-            // lookup other values
+            // TO:DO lookup other values from API
             // item.cost = getCost(item.name);
             // item.image = getImage(item.image);
 

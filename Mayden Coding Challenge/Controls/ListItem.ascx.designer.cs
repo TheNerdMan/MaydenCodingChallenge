@@ -21,6 +21,6 @@ namespace Mayden_Coding_Challenge.Controls
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button removeButton;
+        protected global::System.Web.UI.WebControls.LinkButton removeButton;
     }
 }

@@ -30,7 +30,7 @@ namespace Mayden_Coding_Challenge
         // Create new control then display, also set view state to capture this incase of page refresh
         protected void addButton_Click(object sender, EventArgs e)
         {
-            if (newRecordPlaceholder.Controls.Count >= 0)
+            if (newRecordPlaceholder.Controls.Count <= 0)
             {
                 var control = LoadControl(@"~\Controls\NewItem.ascx");
                 newRecordPlaceholder.Controls.Add(control);

@@ -10,20 +10,6 @@
     .shoppingListItem.new {
         color: black;
     }
-    /*.shoppingListItem .title {
-        color: white;
-    }
-
-    .shoppingListItem .quantity {
-        color: white;
-    }
-
-    .shoppingListItem .cost {
-        color: white;
-    }
-    .shoppingListItem .server {
-        color: white;
-    } */
 
 /* buttons */
 .addButton {
@@ -34,4 +20,8 @@
 .removeButton {
     position: relative;
     top: 40px;
+    color: black;
+}
+.saveNewItemButton{
+    color: black;
 }
