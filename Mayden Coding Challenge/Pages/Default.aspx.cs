@@ -1,4 +1,5 @@
 ﻿using Mayden_Coding_Challenge.Models;
+using Mayden_Coding_Challenge.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,8 @@ namespace Mayden_Coding_Challenge
         protected void Page_Load(object sender, EventArgs e)
         {
             // get list and pass to user control
-            List.shoppingList = new List<ShoppingListItem>() {
-                
-            };
+            var srv = new ShoppingListController();
+            List.shoppingList = srv.getShoppingList();
         }
 
         protected void addButton_Click(object sender, EventArgs e)
