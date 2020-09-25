@@ -3,6 +3,9 @@
 Trello Board Used
 https://trello.com/b/a9uDsABY/mayden-coding-challenge
 
+Time used
+![Time Used Image](https://github.com/TheNerdMan/MaydenCodingChallenge/blob/master/totalTimeUsed.png?raw=true)
+
 Bellow is the PDF sent by Mayden
 
 # Mayden Developer Recruitment
