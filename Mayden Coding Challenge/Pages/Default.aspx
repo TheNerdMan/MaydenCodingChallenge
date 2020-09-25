@@ -13,6 +13,9 @@
             </div>
         </div>
         <div class="row">
+            <asp:PlaceHolder runat="server" ID="newRecordPlaceholder"></asp:PlaceHolder>
+        </div>
+        <div class="row">
             <uc1:List runat="server" ID="List" />
         </div>
     </div>

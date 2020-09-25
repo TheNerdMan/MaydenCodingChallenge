@@ -12,17 +12,16 @@ namespace Mayden_Coding_Challenge.Services
 {
     public class ShoppingListController
     {
-        List<ShoppingListItem> shoppingList = new List<ShoppingListItem>();
-
         /// <summary>
         /// Gets shopping list from JSON file
         /// </summary>
         /// <returns>full shopping list</returns>
+        // TODO: Cashe list
         public List<ShoppingListItem> getShoppingList()
         {
             var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data.json");
             var fileContents = File.ReadAllText(filePath);
-            shoppingList = JsonConvert.DeserializeObject<List<ShoppingListItem>>(fileContents);
+            var shoppingList = JsonConvert.DeserializeObject<List<ShoppingListItem>>(fileContents);
 
             return shoppingList;
         }
@@ -31,10 +30,10 @@ namespace Mayden_Coding_Challenge.Services
         /// Puts the list into the persistant storage
         /// </summary>
         /// <returns>true or false if successful</returns>
-        private bool putShoppingList()
+        private bool putShoppingList(List<ShoppingListItem> shoppingList)
         {
             try
-            {
+            {                
                 var serialized = JsonConvert.SerializeObject(shoppingList);
 
                 var filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data.json");
@@ -53,10 +52,11 @@ namespace Mayden_Coding_Challenge.Services
         /// <returns>updated list</returns>
         public List<ShoppingListItem> addItem(ShoppingListItem newItem)
         {
+            var shoppingList = getShoppingList();
             try
             {
                 shoppingList.Add(newItem);
-                putShoppingList();
+                putShoppingList(shoppingList);
             }
             catch (Exception ex)
             {
@@ -73,10 +73,11 @@ namespace Mayden_Coding_Challenge.Services
         /// <returns>updated list</returns>
         public List<ShoppingListItem> removeItem(int index)
         {
+            var shoppingList = getShoppingList();
             try
             {
                 shoppingList.RemoveAt(index);
-                putShoppingList();
+                putShoppingList(shoppingList);
             }
             catch (Exception ex)
             {
@@ -94,11 +95,13 @@ namespace Mayden_Coding_Challenge.Services
         /// <returns>updated list</returns>
         public List<ShoppingListItem> updateItem(int index, ShoppingListItem updatedItem)
         {
+            var shoppingList = getShoppingList();
             try
             {
+                
                 shoppingList.RemoveAt(index);
                 shoppingList.Add(updatedItem);
-                putShoppingList();
+                putShoppingList(shoppingList);
             }
             catch (Exception ex)
             {

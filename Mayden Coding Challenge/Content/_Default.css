@@ -7,7 +7,10 @@
     border-radius: 5px;
     color: white;
 }
-    .shoppingListItem .title {
+    .shoppingListItem.new {
+        color: black;
+    }
+    /*.shoppingListItem .title {
         color: white;
     }
 
@@ -20,7 +23,7 @@
     }
     .shoppingListItem .server {
         color: white;
-    }
+    } */
 
 /* buttons */
 .addButton {
