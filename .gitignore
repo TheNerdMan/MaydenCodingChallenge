@@ -11,16 +11,16 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-build/
-bld/
-[Bb]in/
-[Oo]bj/
+Mayden Coding Challenge/[Dd]ebug/
+Mayden Coding Challenge/[Dd]ebugPublic/
+Mayden Coding Challenge/[Rr]elease/
+Mayden Coding Challenge/[Rr]eleases/
+Mayden Coding Challenge/x64/
+Mayden Coding Challenge/x86/
+Mayden Coding Challenge/build/
+Mayden Coding Challenge/bld/
+Mayden Coding Challenge/[Bb]in/
+Mayden Coding Challenge/[Oo]bj/
 
 # Visual Studio 2015 cache/options directory
 .vs/
