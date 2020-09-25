@@ -114,13 +114,12 @@ namespace Mayden_Coding_Challenge.Services
         /// <param name="index">items index</param>
         /// <param name="updatedItem">updated item</param>
         /// <returns>updated list</returns>
-        public List<ShoppingListItem> updateItem(int index, ShoppingListItem updatedItem)
+        public List<ShoppingListItem> updateItem(Guid id, ShoppingListItem updatedItem)
         {
             var shoppingList = getShoppingList();
             try
-            {
-                
-                shoppingList.RemoveAt(index);
+            {                
+                shoppingList.Remove(shoppingList.Where(c => c.id == id).Select(c => c).FirstOrDefault());
                 shoppingList.Add(updatedItem);
                 putShoppingList(shoppingList);
             }

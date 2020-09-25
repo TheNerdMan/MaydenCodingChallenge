@@ -10,12 +10,12 @@ namespace Mayden_Coding_Challenge.Models
         public Guid id { get; set; }
         public string name { get; set; }
         public int quantity { get; set; }
-        public float pricePerUnit { get; set; }
+        public decimal pricePerUnit { get; set; }
         public string imageUrl { get; set; }
         public int order { get; set; }
         public bool marked { get; set; } = false;
 
-        public ShoppingListItem(string name, int quantity, float pricePerUnit, int order)
+        public ShoppingListItem(string name, int quantity, decimal pricePerUnit, int order)
         {
             id = Guid.NewGuid();
             this.name = name;

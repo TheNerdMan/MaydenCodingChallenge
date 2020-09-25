@@ -15,7 +15,7 @@ namespace Mayden_Coding_Challenge.Controls
         protected void Page_Load(object sender, EventArgs e)
         {
             // bind list
-            ShoppingList.DataSource = shoppingList.OrderBy(c => c.order);
+            ShoppingList.DataSource = shoppingList.OrderBy(c => c.order).ThenBy(c => c.marked);
             DataBind();
         }
 

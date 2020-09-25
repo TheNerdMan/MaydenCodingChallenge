@@ -13,21 +13,34 @@ namespace Mayden_Coding_Challenge.Controls
     {
         public ShoppingListItem item;
 
-        protected void Page_Init(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
             // Don't bind if we are null, we do null checks on front end
             if (item != null)
             {
                 DataBind();
+                if (item.marked)
+                {
+                    itemDiv.Attributes.Add("class", "shoppingListItem row markedOff");
+                }
             }
         }
 
         protected void removeButton_Click(object sender, EventArgs e)
         {
+            // Call our service to remove on click
             var srv = new ShoppingListController();
             srv.removeItem(item);
             Response.Redirect(Request.RawUrl);
         }
 
+        protected void markButton_Click(object sender, EventArgs e)
+        {
+            // Call our service to remove on click
+            var srv = new ShoppingListController();
+            item.marked = !item.marked;
+            srv.updateItem(item.id, item);
+            Response.Redirect(Request.RawUrl);
+        }
     }
 }

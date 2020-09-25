@@ -11,6 +11,14 @@
         color: black;
     }
 
+.markedOff {
+    opacity: 0.7;
+}
+
+.errorMessage {
+    color: red;
+}
+
 /* buttons */
 .addButton {
     position: relative;
@@ -23,5 +31,8 @@
     color: black;
 }
 .saveNewItemButton{
+    color: black;
+}
+.markButton {
     color: black;
 }

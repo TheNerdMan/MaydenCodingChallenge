@@ -3,6 +3,7 @@ using Mayden_Coding_Challenge.Services;
 using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -21,20 +22,63 @@ namespace Mayden_Coding_Challenge.Controls
 
         protected void saveNewItemButton_Click(object sender, EventArgs e)
         {
-            // save user entered values
-            item.name = newItemName.Text ?? "";
-            item.quantity = int.TryParse(newItemQuantity.Text, out var o) ? o : 0;
-            item.pricePerUnit = int.TryParse(newItemQuantity.Text, out var u) ? u : 0;
-            item.imageUrl = newItemImageLink.Text ?? "";
+            if (ValidateNewItem())
+            {
+                // save user entered values
+                item.name = newItemName.Text ?? "";
+                item.quantity = int.TryParse(newItemQuantity.Text, out var o) ? o : 0;
+                item.pricePerUnit = int.TryParse(newItemQuantity.Text, out var u) ? u : 0;
+                item.imageUrl = newItemImageLink.Text ?? "";
 
-            // TO:DO lookup other values from API
-            // item.cost = getCost(item.name);
-            // item.image = getImage(item.image);
+                // TO:DO lookup other values from API
+                // item.cost = getCost(item.name);
+                // item.image = getImage(item.image);
 
-            // push to list
-            var srv = new ShoppingListController();
-            srv.addItem(item);
-            Response.Redirect(Request.RawUrl);
+                // push to list
+                var srv = new ShoppingListController();
+                srv.addItem(item);
+                Response.Redirect(Request.RawUrl);
+            }
+        }
+
+        private bool ValidateNewItem()
+        {
+            errorMessage.InnerText = "";
+            var allValid = true;
+            // Name Validation
+            if(string.IsNullOrWhiteSpace(newItemName.Text) || !newItemName.Text.All(char.IsLetterOrDigit))
+            {
+                errorMessage.InnerText += "Name should be alphanumeric. ";
+                allValid = false;
+            }
+
+            // Quantity
+            if (string.IsNullOrWhiteSpace(newItemQuantity.Text) || !newItemQuantity.Text.All(char.IsDigit))
+            {
+                errorMessage.InnerText += "Quantity should be numeric. ";
+                allValid = false;
+            }
+
+            // Price
+            var style = NumberStyles.Number | NumberStyles.AllowCurrencySymbol;
+            var culture = CultureInfo.CreateSpecificCulture("en-GB");
+            if (string.IsNullOrWhiteSpace(newItemCost.Text) || !Decimal.TryParse(newItemCost.Text.Trim(), style, culture, out var v))
+            {
+                errorMessage.InnerText += "Price should be in £ and only numbers. ";
+                allValid = false;
+            }
+
+            // Image
+            Uri uriResult;
+            bool result = Uri.TryCreate(newItemImageLink.Text, UriKind.Absolute, out uriResult)
+                && uriResult.Scheme == Uri.UriSchemeHttp;
+            if (result)
+            {
+                errorMessage.InnerText += "Image should be a valid URL. ";
+                allValid = false;
+            }
+
+            return allValid;
         }
     }
 }

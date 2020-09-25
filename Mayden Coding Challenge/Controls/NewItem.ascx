@@ -17,3 +17,6 @@
         <asp:LinkButton runat="server" ID="saveNewItemButton" Text="Save" CssClass="saveNewItemButton" />
     </div>
 </div>
+<div class="row">
+    <p class="errorMessage" runat="server" id="errorMessage"></p>
+</div>
