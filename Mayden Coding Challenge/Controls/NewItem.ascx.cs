@@ -25,10 +25,10 @@ namespace Mayden_Coding_Challenge.Controls
             if (ValidateNewItem())
             {
                 // save user entered values
-                item.name = newItemName.Text ?? "";
-                item.quantity = int.TryParse(newItemQuantity.Text, out var o) ? o : 0;
-                item.pricePerUnit = int.TryParse(newItemQuantity.Text, out var u) ? u : 0;
-                item.imageUrl = newItemImageLink.Text ?? "";
+                var name = newItemName.Text ?? "";
+                var quantity = int.TryParse(newItemQuantity.Text, out var o) ? o : 0;
+                var pricePerUnit = int.TryParse(newItemQuantity.Text, out var u) ? u : 0;
+                var imageUrl = newItemImageLink.Text ?? "https://www.placecage.com/300/300";
 
                 // TO:DO lookup other values from API
                 // item.cost = getCost(item.name);
@@ -36,7 +36,7 @@ namespace Mayden_Coding_Challenge.Controls
 
                 // push to list
                 var srv = new ShoppingListController();
-                srv.addItem(item);
+                srv.addItem(new ShoppingListItem(name, quantity, pricePerUnit, imageUrl, 0));
                 Response.Redirect(Request.RawUrl);
             }
         }

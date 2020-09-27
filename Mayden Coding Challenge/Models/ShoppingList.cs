@@ -15,13 +15,13 @@ namespace Mayden_Coding_Challenge.Models
         public int order { get; set; }
         public bool marked { get; set; } = false;
 
-        public ShoppingListItem(string name, int quantity, decimal pricePerUnit, int order)
+        public ShoppingListItem(string name, int quantity, decimal pricePerUnit, string imageUrl,int order)
         {
             id = Guid.NewGuid();
             this.name = name;
             this.quantity = quantity;
             this.pricePerUnit = pricePerUnit;
-            this.imageUrl = "https://www.placecage.com/300/300";
+            this.imageUrl = imageUrl;
             this.order = order;
         }
     }
